@@ -1,0 +1,322 @@
+/* ここから下に記載していく */   
+/* --headr-- */
+#header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+html{
+    scroll-behavior: smooth;
+}
+#logo{
+    justify-content: left;
+}
+.container{
+    display: flex;
+   }
+.box{
+    padding: 50px 50px;
+    font-size: 21px;    
+}
+/* --mainvisual画像＋2文--*/
+.mainvisual{
+    position: relative;
+    width: 100%;
+}
+#img1{
+    width: 100%;
+}
+#p1{
+    white-space: nowrap;
+    font-size: 55px;
+    color: white;
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    /* margin-bottom: 30px; */
+    transform: translate(-50%, -50%);
+}
+#p2{
+    white-space: nowrap;
+    font-size: 40px;
+    color: white;
+    position: absolute;
+    bottom:42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* --content 共通--*/
+.content{
+    text-align: center;
+}
+.title{
+    padding: 60px 0px 30px 0px;
+    font-weight: bold;
+    font-size: 24px;
+}
+.title2{
+    padding-bottom: 60px;
+    font-size: 18px;
+}
+.text{
+    font-size: 16px;
+    line-height: 2;
+}
+
+/* ABOUT */
+#ABOUT{
+color: #ffd61a;
+}
+#abouttext1{
+    padding: 40px 0px 40px 0px;
+}
+#abouttext2{
+    padding-bottom: 80px;
+}
+
+/* img2 */
+#img2{
+    width: 100%;
+    display: flex;
+}
+
+/* COURSE */
+#coursetext{
+    padding-bottom: 60px;
+}
+
+/* img3+exp共通 */
+.imgexp{
+    display: flex;
+    width: 100%;
+}
+.img3{
+width: 100%;
+}
+.exp{
+   /* padding: 130px; */
+   background-color: #fafafa;
+   font-size: 21px;
+   /* width: 480px; */
+   width: 100%;
+}
+/* img3-1 */
+#title3-1{
+    padding-top: 120px;
+    padding-left: 50px;
+    padding-bottom: 40px;
+    font-size: 24px;
+    font-weight: bold;
+}
+#exp3-1{
+    padding-left: 50px;
+    padding-bottom: 120px;
+}
+
+/* img3-2 */
+#title3-2{
+    padding-top: 120px;
+    padding-right: 50px;
+    padding-left: 450px;
+    padding-bottom: 40px;
+    font-size: 24px;
+    font-weight: bold;
+}
+#exp3-2{
+    padding-right: 50px;
+    padding-left: 450px;
+    padding-bottom: 120px;
+}
+/* 画像＋説明1 */
+/* img3-1 */
+#title3-3{
+    padding-top: 120px;
+    padding-left: 50px;
+    padding-bottom: 40px;
+    font-size: 24px;
+    font-weight: bold;
+}
+#exp3-3{
+    padding-left: 50px;
+    padding-bottom: 120px;
+}
+
+/*  NEWS */
+/* newstext */
+#NEWS{
+    color: #ffd61a;
+}
+#newstext{
+    padding-bottom: 60px;
+}
+/* news-img */
+.img4{
+    display: flex;
+    justify-content: center;
+}
+.img4 :hover{
+    transform: translateY(-5px);
+}
+
+.img4-1{
+    width: 300px;
+}
+#img4-1-2{
+    padding: 0px 30px;
+}
+.card{
+    display: flex;
+    justify-content: center;
+}
+.card :hover{
+    transform: translateY(-5px);
+}
+.card1{
+    width: 300px;
+    font-size: 14px;
+    line-height: 2;
+}
+#card1-2{
+    padding: 0px 30px;
+    font-size: 14px;
+    line-height: 2;
+}
+.newstext2{
+    padding: 30px 0px 24px 0px;
+}
+/* MORE */
+.title4{
+    width: 300px;
+    height: 60px;
+    background-color: #ffd61a;
+    font-size: 18px;
+    color: white;
+    border: none;
+    /* justify-content: center; */
+    text-align: center;
+    line-height: 60px;
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.title4:hover{
+    transform: translateY(-5px);
+}
+
+/* ACESS */
+.section1{
+    background-color: #fafafa;
+}
+#map{
+    width: 100%;
+    padding: 60px 0px 60px 0px;
+}
+.map{
+    position: relative;
+}
+.location{
+    position: absolute;
+    top: 40%;
+    left: 47%;
+    color: red;
+    font-weight: bold;
+}
+
+/* 学校情報 */
+table{
+    margin: 0 auto;
+    background-color: #fafafa;
+}
+th,
+td{
+    padding: 30px 20px;
+}
+th{
+    font-size: 16px;
+    width: 120px;
+    text-align: justify;
+    /* text-justify: inter-ideograph; */
+}
+td{
+    font-size: 16px;
+    text-align: left;
+}
+/* CONTACT */
+#contacttext{
+    padding-bottom: 60px;
+}
+#contacttext2{
+    padding-bottom: 30px;
+}
+#contacttext3{
+    padding-bottom: 70px;
+}
+/* 問い合わせフォーム */
+.contacttabel{
+    width: 100%;
+    margin-bottom: 30px;
+}
+.contactitem,
+.contactbody{
+    padding: 8px;
+    background-color: white;
+}
+.contactitem{
+    text-align: left;
+    width: 240px;
+    padding: 18px 0px 18px 0px;
+    vertical-align:middle
+}
+.contactitem2{
+    line-height: 16px;
+}
+.contactbody{
+    width: 400px;
+}
+.formtext{
+    width: 100%;
+    padding: 18px 0px 18px 0px;
+    border: 1px solid #bfbfbf;
+}
+.formselect{
+    width: 100%;
+    padding: 18px 0px 18px 0px;
+    border: 1px solid #bfbfbf;
+}
+.contact-reason{
+    display: block;
+    margin-top: 24px;
+    border-color: #bfbfbf;
+}
+.formtext2{
+    width: 100%;
+    padding: 18px 0px 18px 0px;
+    height: 150px;
+    border: 1px solid #bfbfbf;
+}
+/* 送信 */
+.contact-submit{
+    width: 300px;
+    height: 60px;
+    background-color: #ffd61a;
+    font-size: 18px;
+    color: white;
+    border: none;
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.contact-submit:hover{
+    transform: translateY(-5px);
+}
+/*  footer*/
+#footer{
+    background-color: #707070;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
