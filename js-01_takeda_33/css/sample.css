@@ -1,0 +1,83 @@
+/* html{background-color: #01153f;} */
+html{
+    background-image:url("../img/background.jpg");
+}
+
+body{
+    margin:0;
+    padding:0;
+    text-align:left;
+    font-size: 40px;
+    /* background-image:url(img/background.jpg); */
+    
+}
+header{
+    /* background-color: #c1b0dd; */
+    /* border-bottom: 1px solid #ccc; */
+    text-align: center;
+    font-family: "Yu Mincho";
+    color: white;
+    padding-top: 100px;
+    padding-bottom: 500px;
+}
+.main1{
+padding-bottom: 500px;
+
+}
+/* main{
+    border-bottom:1px solid #ccc;
+} */
+footer{
+    background-color: #fff;
+    border-bottom:1px solid #ccc;
+    text-align: center;
+}
+h1{
+    font-size:350%;
+    text-align: center;
+    /* border-bottom:1px solid #fff; */
+    height:200px;
+}
+p{
+    font-size:100%;
+    text-align: center;
+    /* border-bottom:1px solid #fff; */
+    line-height:50px;
+    color: white;
+
+}
+.img{
+    /* text-align: center; */
+    margin: auto;
+    display: block;
+    width: 450px;
+}
+ul{
+    padding: 0;
+    /* border-top: 1px solid #000000; */
+    display:table;  /* 定義 */
+    table-layout: fixed;
+    width:100%;
+    height: 200px;
+    font-size: 80px;
+}
+li{
+    text-align: center;
+    vertical-align: middle;
+    list-style-type:none;
+    border: 1px solid #01153f;
+    background-color: rgba(233, 227, 227, 0.736);
+    display:table-cell;  /* 定義 */
+    cursor: pointer;
+}
+li:hover{
+    background: #f97502;
+    color:white;
+}
+.list1{
+    padding-bottom: 500px;
+
+}
+.main2{
+    padding-bottom: 20px;
+}
