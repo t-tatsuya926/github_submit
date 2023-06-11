@@ -11,6 +11,20 @@
 <h1>ねないこだれだ じゃんけん！</h1>
 </header>
 <main>
+  <div id="startbutton">
+    <button id="start" type="button">ゲームスタート</button> 
+    <audio id="sound1" src="./bgm/sound1.mp3"></audio>
+    <audio id="bgm1" src="./bgm/bgm1.mp3"></audio>
+  </div>
+   
+  <div id="story">
+    <img id="imgstory" src="./img/obake_story.jfif" alt="">
+    <p>おやおや、こんな時間におきている子はだれだ</p>
+    <p>じゃんけんで勝てなかったらおばけの世界へ連れてっちゃうぞ</p>
+    <button id="next" type="button">次へ</button>
+  </div>
+
+  <div id="game">
     <p>じゃんけん！ポン！</p>
     <div>
       <ul>
@@ -26,21 +40,42 @@
             <li id="pc_hands"></li>
         </ul>
       </div>
+      <audio id="sound2" src="./bgm/sound2.mp3"></audio>
+      <audio id="sound3" src="./bgm/sound3.mp3"></audio>
+      <audio id="sound4" src="./bgm/sound4.mp3"></audio>
       <div class="main1" >
         <p id="judgment"></p>
         <p id="result"></p>
         <p id="result2"></p>
       </div>
-        <div id="kekka">勝ち:<span id="win">0</span>回</div>
+        <div>勝ち:<span id="win">0</span>回</div>
         <div>負け:<span id="lose">0</span>回</div>
         <div>あいこ:<span id="draw">0</span>回</div>
-        <p id="clear">Clear</p>
+      <div id="story2">
+          <img id="imgstory" src="./img/obake_story.jfif" alt="">
+          <p>そろそろねようぜ</p>
+      </div>
+        <div id="clearbutton"><button id="clear" type="button">Clear</button></div>
+  </div>
 </main>
+
 <table id="list">
 <!-- ここに追加データが挿入される -->
 </table>
 
 <script>
+$("#start").on("click",function(){
+  $("#sound1").get(0).play();
+  $("#startbutton").hide();
+  $("#story").fadeIn(2000);
+  $("#bgm1").get(0).play();
+});
+$("#next").on("click",function(){
+  $("#story").fadeOut();
+  $("#game").fadeIn(300);
+  $("table").fadeIn(300);
+});
+
 //戦績
 let winCount=0;
 let loseCount=0;
@@ -48,6 +83,8 @@ let drawCount=0;
 
 //1_1.イベント（グー）
 $("#gu").on("click",function(){
+  //サウンド
+  $("#sound2").get(0).play();
 //1_2.乱数
 const r =Math.ceil(Math.random()*3);
 //1_3.if分岐処理
@@ -82,16 +119,31 @@ $("#win").html(winCount);
 $("#lose").html(loseCount);
 $("#draw").html(drawCount);
 
+//STORY2
+if(winCount==3){
+  $("#story2").show();
+}
+if(loseCount==3){
+  $("#story2").show();
+}
+if(drawCount==3){
+  $("#story2").show();
+}
+
 //Storage 保存
 localStorage.setItem("勝敗",view2);
 
  // HTML出力 Saveされたものを出力
  const html = `<tr><th>${"勝敗"}</th><td>${view2}</td></tr>`;
     $("#list").append(html);    
+  
 });
 
 //2_1.イベント（チョキ）
 $("#cho").on("click",function(){
+
+//サウンド
+$("#sound3").get(0).play();
 //2_2.乱数
 const r =Math.ceil(Math.random()*3);
 //2_3.if分岐処理
@@ -126,6 +178,17 @@ $("#win").html(winCount);
 $("#lose").html(loseCount);
 $("#draw").html(drawCount);
 
+//STORY2
+if(winCount==3){
+  $("#story2").show();
+}
+if(loseCount==3){
+  $("#story2").show();
+}
+if(drawCount==3){
+  $("#story2").show();
+}
+
 //Storage 保存
 localStorage.setItem("勝敗",view2);
 // HTML出力 Saveされたものを出力
@@ -134,8 +197,11 @@ const html = `<tr><th>${"勝敗"}</th><td>${view2}</td></tr>`;
 
 });
 
+
 //3_1.イベント（パー）
 $("#par").on("click",function(){
+//サウンド
+$("#sound4").get(0).play();
 //3_2.乱数
 const r =Math.ceil(Math.random()*3);
 //3_3.if分岐処理
@@ -170,6 +236,16 @@ $("#win").html(winCount);
 $("#lose").html(loseCount);
 $("#draw").html(drawCount);
 
+//STORY2
+if(winCount==3){
+  $("#story2").show();
+}
+if(loseCount==3){
+  $("#story2").show();
+}
+if(drawCount==3){
+  $("#story2").show();
+}
 
 //Storage 保存
 localStorage.setItem("勝敗",view2);
@@ -181,6 +257,11 @@ const html = `<tr><th>${"勝敗"}</th><td>${view2}</td></tr>`;
 //2.clear クリックイベント
 $("#clear").on("click",function(){
     localStorage.clear();
+    $("#list").empty();
+    $("#win").html(winCount=0);
+    $("#lose").html(loseCount=0);
+    $("#draw").html(drawCount=0);
+
 });
 
 
@@ -191,7 +272,6 @@ for(let i = 0; i < localStorage.length; i++){
     const html = `<tr><th>${key}</th><td>${value}</td></tr>`;
     $("#list").append(html);
 }
-
 
 </script>
 <footer><small>ねないこだれだ愛好会</small></footer>
