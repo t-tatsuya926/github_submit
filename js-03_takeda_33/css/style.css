@@ -1,0 +1,60 @@
+/* ここから下に記載していく */
+html{
+    /* background-color: rgb(211, 243, 243); */
+    background-image:url(../imgs/wallpaper.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* padding-bottom: 30%; */
+    width: auto;
+}
+/* --headr-- */
+header {
+    margin-top: 10px;
+    font-size: 32px;
+}
+/* body */
+body {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    font-family: "Meiryo UI";
+	color: #A52A2A;
+
+}
+#output {
+    overflow: auto;
+    height: 300px;
+    margin: 10px 30%;
+    text-align: right;
+    font-size: 20px;
+}
+
+textarea {
+    border-radius: 10px;
+    text-align: left;
+    font-size: 25px;
+}
+input{
+    border-radius: 10px;
+    font-size: 25px;
+}
+button{
+    border-radius: 10px;
+    font-weight: bold;
+	border: 2px solid #27acd9;
+	color: #27acd9;
+	transition: 0.5s;
+    font-size: 25px;
+
+}
+button:hover {
+	color: #fff;
+	background: #27acd9;
+}
+#name{
+    font-size: 15px;
+}
+.box{
+    background-color: rgb(245, 245, 245);
+}

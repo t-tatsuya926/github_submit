@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object演習</title>
+</head>
+<body>
+<script>
+// オブジェクトの中身を取得してみる
+const post = {
+    title: "投稿タイトル",
+    text: "本文",
+    user: {
+        name: "ジーズ太郎",
+        email: "gstaro@example.com"
+    }
+};
+//POSTの中を取り出すには？
+console.log(post.title);
+console.log(post.text);
+
+//ジーズ太郎を取り出すには？
+console.log(post.user.name);
+
+const user={
+    name:"武田",
+    age:35,
+    sex:"男"
+};
+console.log(user);
+//4つめのキーを追加したい場合
+user.birth = "1月"
+console.log(user);
+
+//更に変更
+user.birth = "9月"
+console.log(user);
+
+
+</script>
+</body>
+</html>
