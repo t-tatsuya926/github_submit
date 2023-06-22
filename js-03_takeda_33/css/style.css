@@ -25,9 +25,10 @@ body {
 #output {
     overflow: auto;
     height: 300px;
-    margin: 10px 30%;
+    margin: 10px 33%;
     text-align: right;
-    font-size: 20px;
+    font-size: 25px;
+    
 }
 
 textarea {
@@ -53,8 +54,9 @@ button:hover {
 	background: #27acd9;
 }
 #name{
-    font-size: 15px;
+    font-size: 25px;
 }
-.box{
+.message{
     background-color: rgb(245, 245, 245);
+    border-radius: 10px;
 }
