@@ -13,6 +13,7 @@
 </header>
 
 <body>
+    <!-- <img  id="pic1" src="./imgs/wallpaper.jpg" alt=""> -->
     <!-- コンテンツ表示画面 -->
     <div>
         <div id="output"></div>
@@ -22,7 +23,7 @@
             <!-- <button id="delete">削除</button> -->
         </div>
         <div>
-            名前：　  <input type="text" id="uname">
+            名前：　 <input type="text" id="uname">
         </div>
     </div>
 
@@ -43,7 +44,7 @@
 
         // Your web app's Firebase configuration
         const firebaseConfig = {
-            apiKey: "",
+            apiKey: "AIzaSyBrF4M_sfUwyG8Gk0S3uNgQ7dV6T0GaeSw",
             authDomain: "fir-demo-8f4aa.firebaseapp.com",
             projectId: "fir-demo-8f4aa",
             storageBucket: "fir-demo-8f4aa.appspot.com",
@@ -87,19 +88,52 @@
         });
 
         //データ削除
+        // function deleteData() {
+        //     if(this.dataset.key){
+        //         firebase.database().ref('chat').child(this.dataset.key).remove()
+        //         alert("削除しました。");
+        //     }
+        // }
         $("#output").on("dblclick", ".message", function () {
-            $(this).id;
-            console.log(this);
-            const chatRef = ref(db,"chat");
-            console.log(chatRef);  
+            const id = $(this).attr("id");
+            console.log(id)
+            const chatRef =ref(db, "chat/" + id);
+            console.log(chatRef);
             remove(chatRef);
-        });
-        onChildRemoved(dbRef, function (data) {
+
+            onChildRemoved(dbRef, function (data) {
             const msg = data.val();
             const key = data.key;
             const h = `<p id="${key}" class="message">${msg.uname}: ${msg.text}</p><br>`;
             $('#output').remove(h);
         });
+        location.reload();
+        });
+
+        // $("#output").on("dblclick", ".message", function () {
+        //     if(this.id){
+        //         firebase.dbRef().ref('chat').child(this.id).remove()
+        //         alert("削除しました。");
+        //     };
+
+
+
+        //     const chatRef = (this.id);
+        //     // console.log(chatRef);
+            
+        //     // const chatRef = this.id;
+        //     // firebase.ref("chat").child("ada").remove();
+        //     remove(chatRef);
+        // });
+
+        // onChildRemoved(dbRef, function (data) {
+        //     const msg = data.val();
+        //     const key = data.key;
+        //     const h = `<p id="${key}" class="message">${msg.uname}: ${msg.text}</p><br>`;
+        //     $('#output').remove(h);
+        // });
+
+        
 
     </script>
 
