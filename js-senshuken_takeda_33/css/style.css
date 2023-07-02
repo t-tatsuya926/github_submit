@@ -1,0 +1,173 @@
+/* ここから下に記載していく */
+html {
+    background-image: url(../imgs/sougen53.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+/* --headr-- */
+header {
+    margin-top: 10px;
+    font-size: 32px;
+}
+
+/* body */
+body {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    font-family: "Meiryo UI";
+}
+
+#title {
+    margin-top: 100px;
+    font-size: 100px;
+    text-shadow: 0 0 15px #20529f;
+    color: #fff;
+}
+
+#stb {
+    margin: 300px 0 300px 0;
+    font-size: 100px;
+}
+
+button {
+    border-radius: 10px;
+    font-weight: bold;
+    border: 2px solid #27acd9;
+    color: #27acd9;
+    transition: 0.5s;
+    font-size: 50px;
+}
+
+button:hover {
+    color: #fff;
+    background: #27acd9;
+}
+
+#game {
+    display: none;
+}
+#title2{
+    text-shadow: 0 0 15px #20529f;
+    color: #fff;
+    font-size: 80px;
+}
+#num{
+    color: #ff0000;
+
+}
+#numL {
+    visibility: hidden;
+}
+
+#numR {
+    visibility: hidden;
+}
+
+#ladybug {
+    display: none;
+    display: flex;
+    text-align: left;
+    width: 80px;
+    justify-content: left;
+    width: 100px;
+}
+
+.box {
+    width: 550px;  
+}
+#AfClickL {
+    position: relative;
+    /* display: flex;
+    flex-wrap:wrap; */
+}
+#ladybugL {
+    position: absolute;
+    display: flex;
+    width: 80px;
+    top: 200px;
+    left: 100px;
+}
+
+#AfClickR {
+    position: relative;
+    display: flex;
+
+}
+
+#ladybugR {
+    position: absolute;
+    display: flex;
+    text-align: left;
+    width: 80px;
+    top: 200px;
+    left: 100px;
+}
+
+#maru2 {
+    width: 500px;
+}
+
+#batsu2 {
+
+    width: 500px;
+}
+
+.img {
+    width: 70px;
+}
+
+#container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#back {
+    width: 100%;
+    background-image: url(../imgs/wallpaper.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: auto;
+
+}
+
+#popup {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#popdesignL {
+    font-size: 80px;
+    background-color: azure;
+    border-radius: 10px;
+    padding: 1rem 1rem 1rem 1.5rem;
+}
+#popdesignR {
+    font-size: 80px;
+    background-color: azure;
+    border-radius: 10px;
+}
+
+#output {
+    overflow: auto;
+    height: 300px;
+    margin: 10px 33%;
+    text-align: right;
+    font-size: 25px;
+}
+
+textarea {
+    border-radius: 10px;
+    text-align: left;
+    font-size: 25px;
+}
+
+input {
+    border-radius: 10px;
+    font-size: 25px;
+}

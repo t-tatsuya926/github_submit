@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="utf-8">
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- JQuery -->
+    <title>テントウムシをともだちにあげよう！</title>
+</head>
+
+<body>
+    <header>
+    </header>
+    <main>
+        <!-- ゲームスタート -->
+
+        <div id="start">
+            <p id="title">テントウムシをともだちにあげよう！</p>
+            <button id="stb" type="button">スタート</button>
+            <audio id="sound1" src="./bgm/sound1.mp3"></audio>
+            <audio id="bgm1" src="./bgm/bgm1.mp3"></audio>
+        </div>
+
+        <!-- game画面 -->
+        <div id="game">
+            <div id="title2"><span id="num"></span>匹のテントウムシを分けてあげよう</span></div>
+            <p id="ladybug"></p>
+            <!-- カウント用 -->
+            <p id="numL" type="number"></p>
+            <p id="numR" type="number"></p>
+
+            <!-- カウント用 -->
+            <ul id="container">
+                <li id="boy"><img src="./imgs/boy.png" alt=""> </li>
+                <div id="AfClickL">
+                    <li id="box1"><img class="box" src="./imgs/box.png" alt=""> </li>
+                    <p id="ladybugL"></p>
+                </div>
+                <div id=kekka>
+                    <p id="maru"></p>
+                    <p id="batsu"></p>
+                </div>
+                <div id="AfClickR">
+                    <li id="box2"><img class="box" src="./imgs/box.png" alt=""> </li>
+                    <p id="ladybugR"></p>
+                </div>
+
+                <li id="girl"><img src="./imgs/girl.png" alt=""> </li>
+            </ul>
+
+            <ul id="popup">
+                <li id="popdesignL"><span id="leftnum" type="number">0</span>匹ほしいな</li>
+                <li id="popdesignR"><span id="rightnum">0</span>匹ちょうだい！</li>
+            </ul>
+            <br>
+            <button id="fin" type="button"><a href="#kekka">かいとうけっか</a></button>
+            <button id="clear" type="button"><a href="#game">クリア</a></button>
+        </div>
+    </main>
+
+    <!-- 以下JS -->
+    <script>
+        let r = 0;
+        $("#stb").on("click", function () {
+            $("#start").hide();
+            $("#game").fadeIn(500);
+            $("#bgm1").get(0).play();
+            $("#sound1").get(0).play();
+            r = Math.ceil(Math.random() * 5);
+            if (r == 1) {
+                num = 1
+                num2 = 1
+                bug = '<img class="img" src="imgs/ladybug.png">'
+                leftnum = 1
+                rightnum = r - leftnum
+                // console.log( typeof num)
+            }
+            if (r == 2) {
+                num = 2
+                num2 = 2
+                bug = '<img class="img" src="imgs/ladybug.png">';
+                leftnum = r - 1
+                rightnum = r - leftnum
+            }
+            if (r == 3) {
+                num = 3
+                num2 = 3
+                bug = '<img  class="img" src="imgs/ladybug.png">';
+                leftnum = r - 1
+                rightnum = r - leftnum
+            }
+            if (r == 4) {
+                num = 4
+                num2 = 4
+                bug = '<img  class="img" src="imgs/ladybug.png">';
+                leftnum = r - 1
+                rightnum = r - leftnum
+            }
+            if (r == 5) {
+                num = 5
+                num2 = 5
+                bug = '<img  class="img" src="imgs/ladybug.png">';
+                leftnum = r - 3
+                rightnum = r - leftnum
+
+            }
+            //表示処理
+            $("#num").html(num);
+            $("#num2").html(num2);
+            $("#ladybug").html(bug.repeat(r));
+            $("#leftnum").html(leftnum);
+            $("#rightnum").html(rightnum);
+
+            //boxクリックイベント内側
+            let L = ""
+            let R = ""
+            let click_countL = 0;
+            let click_countR = 0;
+
+            $("#box1").on("click", function () {
+                L += '<img class="img" src="imgs/ladybug.png">';
+                $("#ladybugL").html(L);
+                click_countL++;
+                $("#numL").html(click_countL);
+            });
+            // let b = ""
+            $("#box2").on("click", function () {
+                R += '<img class="img" src="imgs/ladybug.png">';
+                $("#ladybugR").html(R);
+                click_countR++;
+                $("#numR").html(click_countR);
+            });
+            $("#fin").on("click", function () {
+                if ((click_countL == leftnum) && (click_countR == rightnum)) {
+                    $("#maru").html('<img id="maru2" src="imgs/maru.png">');
+                } else {
+                    $("#batsu").html('<img id="batsu2" src="imgs/mousukoshi.png">')
+                };
+            });
+
+        });
+
+        //クリアイベント
+        $("#clear").on("click", function () {
+            window.location.reload();
+        });
+    </script>
+</body>
+</html>
