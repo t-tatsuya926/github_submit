@@ -7,10 +7,10 @@ html {
 }
 
 /* --headr-- */
-header {
+/* header {
     margin-top: 10px;
-    font-size: 32px;
-}
+    font-size: 5px;
+} */
 
 /* body */
 body {
@@ -28,7 +28,7 @@ body {
 }
 
 #stb {
-    margin: 300px 0 300px 0;
+    margin: 200px 0 200px 0;
     font-size: 100px;
 }
 
@@ -49,15 +49,18 @@ button:hover {
 #game {
     display: none;
 }
-#title2{
+
+#title2 {
     text-shadow: 0 0 15px #20529f;
     color: #fff;
     font-size: 80px;
 }
-#num{
+
+#num {
     color: #ff0000;
 
 }
+
 #numL {
     visibility: hidden;
 }
@@ -69,54 +72,60 @@ button:hover {
 #ladybug {
     display: none;
     display: flex;
-    text-align: left;
-    width: 80px;
-    justify-content: left;
-    width: 100px;
+    display: block;
+}
+#boy{
+    width:290px ;
+}
+#girl{
+    width:290px ;
+}
+.box {
+    width: 500px;
+    height: 400px;
 }
 
-.box {
-    width: 550px;  
-}
 #AfClickL {
     position: relative;
-    /* display: flex;
-    flex-wrap:wrap; */
+    display: flex;
+    flex-wrap: wrap;
+    
 }
+
 #ladybugL {
     position: absolute;
-    display: flex;
-    width: 80px;
-    top: 200px;
+    text-align: left;
+    top: 100px;
     left: 100px;
+    right: 100px;
 }
 
 #AfClickR {
     position: relative;
     display: flex;
-
+    flex-wrap: wrap;
 }
 
 #ladybugR {
     position: absolute;
-    display: flex;
     text-align: left;
-    width: 80px;
-    top: 200px;
+    top: 100px;
     left: 100px;
+    right: 100px;
 }
 
 #maru2 {
-    width: 500px;
+    width: 270px;
 }
 
 #batsu2 {
 
-    width: 500px;
+    width: 270px;
 }
 
 .img {
-    width: 70px;
+    width: 80px;
+
 }
 
 #container {
@@ -138,36 +147,18 @@ button:hover {
 #popup {
     display: flex;
     justify-content: space-between;
-
+    width: 100%;
 }
 
 #popdesignL {
-    font-size: 80px;
+    font-size: 70px;
     background-color: azure;
     border-radius: 10px;
-    padding: 1rem 1rem 1rem 1.5rem;
+    /* padding: 1rem 1rem 1rem 1.5rem; */
 }
+
 #popdesignR {
-    font-size: 80px;
+    font-size: 70px;
     background-color: azure;
     border-radius: 10px;
-}
-
-#output {
-    overflow: auto;
-    height: 300px;
-    margin: 10px 33%;
-    text-align: right;
-    font-size: 25px;
-}
-
-textarea {
-    border-radius: 10px;
-    text-align: left;
-    font-size: 25px;
-}
-
-input {
-    border-radius: 10px;
-    font-size: 25px;
 }

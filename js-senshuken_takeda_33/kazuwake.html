@@ -19,9 +19,12 @@
 
         <div id="start">
             <p id="title">テントウムシをともだちにあげよう！</p>
+            <img class="img" src="./imgs/ladybug.png" alt="">
             <button id="stb" type="button">スタート</button>
+            <img class="img" src="./imgs/ladybug.png" alt="">
             <audio id="sound1" src="./bgm/sound1.mp3"></audio>
             <audio id="bgm1" src="./bgm/bgm1.mp3"></audio>
+
         </div>
 
         <!-- game画面 -->
@@ -34,7 +37,7 @@
 
             <!-- カウント用 -->
             <ul id="container">
-                <li id="boy"><img src="./imgs/boy.png" alt=""> </li>
+                <li><img id="boy" src="./imgs/boy.png" alt=""> </li>
                 <div id="AfClickL">
                     <li id="box1"><img class="box" src="./imgs/box.png" alt=""> </li>
                     <p id="ladybugL"></p>
@@ -48,16 +51,15 @@
                     <p id="ladybugR"></p>
                 </div>
 
-                <li id="girl"><img src="./imgs/girl.png" alt=""> </li>
+                <li><img id="girl" src="./imgs/girl.png" alt=""> </li>
             </ul>
 
             <ul id="popup">
                 <li id="popdesignL"><span id="leftnum" type="number">0</span>匹ほしいな</li>
                 <li id="popdesignR"><span id="rightnum">0</span>匹ちょうだい！</li>
             </ul>
-            <br>
             <button id="fin" type="button"><a href="#kekka">かいとうけっか</a></button>
-            <button id="clear" type="button"><a href="#game">クリア</a></button>
+            <button id="clear" type="button"><a href="#game">はじめから</a></button>
         </div>
     </main>
 
@@ -67,9 +69,9 @@
         $("#stb").on("click", function () {
             $("#start").hide();
             $("#game").fadeIn(500);
-            $("#bgm1").get(0).play();
             $("#sound1").get(0).play();
-            r = Math.ceil(Math.random() * 5);
+            $("#bgm1").get(0).play();
+            r = Math.ceil(Math.random() * 10);
             if (r == 1) {
                 num = 1
                 num2 = 1
@@ -105,7 +107,41 @@
                 bug = '<img  class="img" src="imgs/ladybug.png">';
                 leftnum = r - 3
                 rightnum = r - leftnum
-
+            }
+            if (r == 6) {
+                num = 6
+                num2 = 6
+                bug = '<img  class="img" src="imgs/ladybug.png">';
+                leftnum = r - 2
+                rightnum = r - leftnum
+            }
+            if (r == 7) {
+                num = 7
+                num2 = 7
+                bug = '<img  class="img" src="imgs/ladybug.png">';
+                leftnum = r - 5
+                rightnum = r - leftnum
+            }
+            if (r == 8) {
+                num = 8
+                num2 = 8
+                bug = '<img  class="img" src="imgs/ladybug.png">';
+                leftnum = r - 7
+                rightnum = r - leftnum
+            }
+            if (r == 9) {
+                num = 9
+                num2 = 9
+                bug = '<img  class="img" src="imgs/ladybug.png">';
+                leftnum = r - 3
+                rightnum = r - leftnum
+            }
+            if (r == 10) {
+                num = 10
+                num2 = 10
+                bug = '<img  class="img" src="imgs/ladybug.png">';
+                leftnum = r - 5
+                rightnum = r - leftnum
             }
             //表示処理
             $("#num").html(num);
@@ -113,10 +149,17 @@
             $("#ladybug").html(bug.repeat(r));
             $("#leftnum").html(leftnum);
             $("#rightnum").html(rightnum);
+            //音量
+            const v1 = $("#sound1");
+            sound1.volume = 0.1;
+
+            const v2 = $("#bgm1");
+            bgm1.volume = 0.1;
 
             //boxクリックイベント内側
             let L = ""
             let R = ""
+            // let B = ""
             let click_countL = 0;
             let click_countR = 0;
 
@@ -125,8 +168,10 @@
                 $("#ladybugL").html(L);
                 click_countL++;
                 $("#numL").html(click_countL);
+                // B ='<img class="img" src="imgs/ladybug.png">';
+                // $("#ladybug").html(B);
             });
-            // let b = ""
+    
             $("#box2").on("click", function () {
                 R += '<img class="img" src="imgs/ladybug.png">';
                 $("#ladybugR").html(R);
@@ -140,13 +185,16 @@
                     $("#batsu").html('<img id="batsu2" src="imgs/mousukoshi.png">')
                 };
             });
-
         });
 
         //クリアイベント
         $("#clear").on("click", function () {
             window.location.reload();
         });
+        // $("#clear").on("click", function () {
+        //     $("ladybugL").html(off);
+        // });
     </script>
 </body>
+
 </html>
