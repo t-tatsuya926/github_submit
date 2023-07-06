@@ -45,6 +45,9 @@
                 <div id=kekka>
                     <p id="maru"></p>
                     <p id="batsu"></p>
+                    <p id="win"></p>
+                    <p id="winc">頑張ったね</p>
+
                 </div>
                 <div id="AfClickR">
                     <li id="box2"><img class="box" src="./imgs/box.png" alt=""> </li>
@@ -59,7 +62,15 @@
                 <li id="popdesignR"><span id="rightnum">0</span>匹ちょうだい！</li>
             </ul>
             <button id="fin" type="button"><a href="#kekka">かいとうけっか</a></button>
-            <button id="clear" type="button"><a href="#game">はじめから</a></button>
+            <button id="clear" type="button"><a href="#game">やりなおす</a></button>
+            <button id="next" type="button"><a href="#game">つぎへ</a></button>
+            <button id="restart" type="button"><a href="#game">はじめから</a></button>
+
+            <p id="star"></p>
+            <!-- カウント用 -->
+            <p id="starnum" type="number"></p>
+
+
         </div>
     </main>
 
@@ -78,7 +89,6 @@
                 bug = '<img class="img" src="imgs/ladybug.png">'
                 leftnum = 1
                 rightnum = r - leftnum
-                // console.log( typeof num)
             }
             if (r == 2) {
                 num = 2
@@ -159,17 +169,17 @@
             //boxクリックイベント内側
             let L = ""
             let R = ""
-            // let B = ""
+            let S = ""
             let click_countL = 0;
             let click_countR = 0;
+            let click_countS = 0;
+
 
             $("#box1").on("click", function () {
                 L += '<img class="img" src="imgs/ladybug.png">';
                 $("#ladybugL").html(L);
                 click_countL++;
                 $("#numL").html(click_countL);
-                // B ='<img class="img" src="imgs/ladybug.png">';
-                // $("#ladybug").html(B);
             });
 
             $("#box2").on("click", function () {
@@ -181,19 +191,146 @@
             $("#fin").on("click", function () {
                 if ((click_countL == leftnum) && (click_countR == rightnum)) {
                     $("#maru").html('<img id="maru2" src="imgs/maru.png">');
+                    S += '<img class="img" src="imgs/star.png">';
+                    $("#star").html(S);
+                    click_countS++;
+                    $("#starnum").html(click_countS);
+
                 } else {
                     $("#batsu").html('<img id="batsu2" src="imgs/mousukoshi.png">')
                 };
+                if (click_countS == 3) {
+                    let st = '<img id ="win" src="imgs/kuwagata.png">';
+                    $("#win").html(st);
+                    $("#maru").html("");
+                };
+            });
+            $("#clear").on("click", function () {
+                L = "";
+                R = "";
+                // S = "";
+                click_countL = 0;
+                click_countR = 0;
+                // click_countS = 0;
+                $("#ladybugL").html(L);
+                $("#ladybugR").html(R);
+                $("#numL").html(click_countL);
+                $("#numR").html(click_countR);
+                // $("#starnum").html(click_countS);
+                $("#maru").html("");
+                $("#batsu").html("");
+                $("#win").html("");
+                // $("#star").html("");
+            });
+
+            //さいしょから
+            $("#restart").on("click", function () {
+            location.reload();
+        });
+
+
+
+            //クリアイベント
+            $("#next").on("click", function () {
+                r = Math.ceil(Math.random() * 10);
+                if (r == 1) {
+                    num = 1
+                    num2 = 1
+                    bug = '<img class="img" src="imgs/ladybug.png">'
+                    leftnum = 1
+                    rightnum = r - leftnum
+                }
+                if (r == 2) {
+                    num = 2
+                    num2 = 2
+                    bug = '<img class="img" src="imgs/ladybug.png">';
+                    leftnum = r - 1
+                    rightnum = r - leftnum
+                }
+                if (r == 3) {
+                    num = 3
+                    num2 = 3
+                    bug = '<img  class="img" src="imgs/ladybug.png">';
+                    leftnum = r - 1
+                    rightnum = r - leftnum
+                }
+                if (r == 4) {
+                    num = 4
+                    num2 = 4
+                    bug = '<img  class="img" src="imgs/ladybug.png">';
+                    leftnum = r - 1
+                    rightnum = r - leftnum
+                }
+                if (r == 5) {
+                    num = 5
+                    num2 = 5
+                    bug = '<img  class="img" src="imgs/ladybug.png">';
+                    leftnum = r - 3
+                    rightnum = r - leftnum
+                }
+                if (r == 6) {
+                    num = 6
+                    num2 = 6
+                    bug = '<img  class="img" src="imgs/ladybug.png">';
+                    leftnum = r - 2
+                    rightnum = r - leftnum
+                }
+                if (r == 7) {
+                    num = 7
+                    num2 = 7
+                    bug = '<img  class="img" src="imgs/ladybug.png">';
+                    leftnum = r - 5
+                    rightnum = r - leftnum
+                }
+                if (r == 8) {
+                    num = 8
+                    num2 = 8
+                    bug = '<img  class="img" src="imgs/ladybug.png">';
+                    leftnum = r - 7
+                    rightnum = r - leftnum
+                }
+                if (r == 9) {
+                    num = 9
+                    num2 = 9
+                    bug = '<img  class="img" src="imgs/ladybug.png">';
+                    leftnum = r - 3
+                    rightnum = r - leftnum
+                }
+                if (r == 10) {
+                    num = 10
+                    num2 = 10
+                    bug = '<img  class="img" src="imgs/ladybug.png">';
+                    leftnum = r - 5
+                    rightnum = r - leftnum
+                }
+                //表示処理
+                $("#num").html(num);
+                $("#num2").html(num2);
+                $("#ladybug").html(bug.repeat(r));
+                $("#leftnum").html(leftnum);
+                $("#rightnum").html(rightnum);
+                //クリアイベント２
+                L = "";
+                R = "";
+                // S = "";
+                click_countL = 0;
+                click_countR = 0;
+                // click_countS = 0;
+
+                $("#ladybugL").html(L);
+                $("#ladybugR").html(R);
+                $("#numL").html(click_countL);
+                $("#numR").html(click_countR);
+                // $("#starnum").html(click_countS);
+                $("#maru").html("");
+                $("#batsu").html("");
+                // $("#win").html("");
+                // $("#star").html("");
+
             });
         });
 
-        //クリアイベント
-        $("#clear").on("click", function () {
-            window.location.reload();
-        });
-        // $("#clear").on("click", function () {
-        //     $("ladybugL").html(off);
-        // });
+
     </script>
 </body>
 
