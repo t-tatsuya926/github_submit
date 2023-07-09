@@ -1,0 +1,20 @@
+html {
+    width: 100%;
+    text-align: center;
+    font-family: "Meiryo UI";
+}
+table{
+    width: 100%;
+}
+#t{
+    width: 100%;
+    background-color: darkblue;
+    color: white;
+
+} 
+td{
+    font-size: 8px;
+    border: 1px solid black;
+    font-weight: bold;
+
+}

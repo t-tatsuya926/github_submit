@@ -1,0 +1,87 @@
+html {
+    background-image: url(../img/sky.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    text-align: center;
+    font-family: "Meiryo UI";
+}
+header{
+    background-color: white;
+    opacity: 0.8;
+}
+.title{
+    color:black;
+    font-weight: bold;
+
+}
+.formT{
+    width: 700px;
+    margin-bottom: 30px;
+    margin: 0 auto;
+}
+.formI,
+.formB{
+    padding: 8px;
+    width: 500px;
+    color: white;
+    font-weight: bold;
+    
+}
+.content{
+    text-align: left;
+    width: 240px;
+    padding: 18px 0px 18px 0px;
+    vertical-align:middle
+}
+.contentT{
+    line-height: 16px;
+}
+.contactbody{
+    width: 400px;
+}
+.formtext{
+    width: 100%;
+    padding: 18px 0px 18px 0px;
+    border: 1px solid #bfbfbf;
+}
+.formselect{
+    width: 100%;
+    padding: 18px 0px 18px 0px;
+    border: 1px solid #bfbfbf;
+}
+.contact-reason{
+    display: block;
+    margin-top: 24px;
+    border-color: #bfbfbf;
+}
+.formtext2{
+    width: 100%;
+    padding: 18px 0px 18px 0px;
+    height: 150px;
+    border: 1px solid #bfbfbf;
+}
+/* 送信 */
+.contact-submit{
+    width: 300px;
+    height: 60px;
+    background-color: #ffd61a;
+    font-size: 18px;
+    color: white;
+    border: none;
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.contact-submit:hover{
+    transform: translateY(-5px);
+}
+/*  footer*/
+#footer{
+    background-color: #707070;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
