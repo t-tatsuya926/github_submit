@@ -14,7 +14,8 @@ $comment =$_POST['comment'];
 //2. DB接続します
 try {
   //Password:MAMP='root',XAMPP=''
-  $pdo = new PDO('mysql:dbname=maroonocelot9_bookmark;charset=utf8;host=mysql57.maroonocelot9.sakura.ne.jp','root','');
+  $pdo = new PDO('mysql:dbname=gs_db;charset=utf8;host=localhost','root','');//ローカル
+  // $pdo = new PDO('mysql:dbname=maroonocelot9_bookmark;charset=utf8;host=mysql57.maroonocelot9.sakura.ne.jp','root','');
 } catch (PDOException $e) {
   exit('DB Connection Error:'.$e->getMessage());
 }
